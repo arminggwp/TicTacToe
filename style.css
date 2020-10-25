@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+body, html {
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#pageGrid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 10% 1fr 2fr 1fr 10%;
+    grid-template-rows: 10% 1fr 10% 10% 10% 10%;
+}
+
+#bgVideo {
+    grid-row-start: 1;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    z-index: -100;
+}
+
+#title {
+    z-index: 100;
+    font-family: 'Monoton', cursive;
+    color: antiquewhite;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    align-self: start;
+    font-size: 60px;
+    text-shadow: 5px 10px 10px burlywood;
+}
+
+#title2 {
+    z-index: 100;
+    font-family: 'Monoton', cursive;
+    color: white;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    align-self: start;
+    font-size: 30px;
+    text-shadow: 5px 5px 5px burlywood;
+    visibility: hidden;
+}
+
+#startButton, #reset, #changeAI {
+    z-index: 100;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    align-self: end;
+    margin-bottom: 100px;
+    background-color: transparent;
+    color: white;
+    text-shadow: 2px 2px 2px burlywood;
+    font-size: 30px;
+    border: 0px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#startButton:hover, .diffButtons:hover, #reset:hover, #changeAI:hover {
+    border: 2px solid white;
+    box-shadow: 0px 0px 20px burlywood;
+    border-radius: 10px;
+    transform: scale(1.1);
+}
+
+#menu {
+    height: 300px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+#playerName {
+    background-color: transparent;
+    justify-self: center;
+    color: burlywood;
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 205px;
+    height: 30px;
+}
+
+.diffButtons {
+    background-color: transparent;
+    color: white;
+    text-shadow: 2px 2px 2px burlywood;
+    font-size: 30px;
+    border: 0px;
+    font-family: 'Rubik', sans-serif;
+    width: 205px;
+    height: 45px;
+}
+
+p {
+    font-size: 20px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+#nameTag {
+    margin-bottom: 20px;
+}
+
+#displayBoard {
+    height: 450px;
+    width: 450px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    display: grid;
+    border: 2px solid gray;
+    background-color: rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+}
+
+.boardBox {
+    border: 2px solid gray;
+    font-size: 80px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+#reset {
+    z-index: 99;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    visibility: hidden;
+}
+
+#scoreBoard {
+    margin-top: 100px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    visibility: hidden;
+    height: 100px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+#scoreName {
+    color: burlywood;
+    align-self: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#wins {
+    color: green;
+    align-self: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#losses {
+    color: palevioletred;
+    align-self: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#outcomeScreen {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    color: white;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    place-self: center center;
+    visibility: hidden;
+    margin-top: 20px;
+}
+
+#changeAI {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    place-self: end center;
+    visibility: hidden;
+}
+
+#aboutMe {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    visibility: visible;
+    color: gray;
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    place-self: start center;
+    text-align: center;
+    margin-top: 70px;
+    visibility: hidden;
+}
+
+a {
+    color: white;
+}

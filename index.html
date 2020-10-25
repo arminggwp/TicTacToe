@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="pageGrid">
+      <h1 id="title">Tic Tac Toe</h1>
+      <h2 id="title2">Tic Tac Toe</h2>
+      <video autoplay muted loop id="bgVideo">
+        <source src="neon.mp4" type="video/mp4">
+      </video>
+      <button id="startButton" onclick="startButton()">START</button>
+      <div id="menu">
+        <p id="nameTag">ENTER NAME</p>
+        <input id="playerName" type="text">
+        <p>SELECT DIFFICULTY</p>
+        <button class="diffButtons" id="normalDiff" onclick="normalButton()">NORMAL</button>
+        <button class="diffButtons" id="impossibleDiff">IMPOSSIBLE</button>
+      </div>
+      <div id="displayBoard"></div>
+      <div id="scoreBoard"></div>
+      <button id="reset" onclick="resetGame()">RESET</button>
+      <button id="changeAI" onclick="changeAI()">DIFFICULTY</button>
+      <div id="outcomeScreen">CONGRATS</div>
+      <div id="aboutMe">
+        Made by <a href="https://github.com/arminggwp">arminggwp</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
