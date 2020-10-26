@@ -17,10 +17,6 @@ body, html {
     grid-template-rows: 10% 1fr 10% 10% 10% 10%;
 }
 
-#bgVideo {
-    z-index: -100;
-}
-
 #title {
     z-index: 100;
     font-family: 'Monoton', cursive;
