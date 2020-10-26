@@ -3,6 +3,7 @@
 
 body, html {
     height: 100%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
 }
@@ -10,15 +11,13 @@ body, html {
 #pageGrid {
     display: grid;
     height: 100%;
+    width: 100%;
+    text-align: center;
     grid-template-columns: 10% 1fr 2fr 1fr 10%;
     grid-template-rows: 10% 1fr 10% 10% 10% 10%;
 }
 
 #bgVideo {
-    grid-row-start: 1;
-    grid-row-end: 6;
-    grid-column-start: 1;
-    grid-column-end: 5;
     z-index: -100;
 }
 
