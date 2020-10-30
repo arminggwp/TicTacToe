@@ -142,6 +142,13 @@ p {
     justify-content: center;
 }
 
+.shape {
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
 .boardBox:nth-child(5) {
     border-left: 3px solid #1b4332;
     border-top: 3px solid #1b4332;

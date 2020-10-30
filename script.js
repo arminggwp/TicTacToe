@@ -63,9 +63,12 @@ function gameGrid() {
     for (let i = 1; i < 10; i++) {
         const boardBox = document.createElement('div');
         boardBox.classList.add('boardBox');
-        boardBox.setAttribute('data-box', i);
-        boardBox.setAttribute('onclick', 'gameFlow(this.dataset.box)');
         displayBoard.appendChild(boardBox);
+        const shape = document.createElement('div');
+        shape.classList.add('shape');
+        shape.setAttribute('data-box', i);
+        shape.setAttribute('onclick', 'gameFlow(this.dataset.box)');
+        boardBox.appendChild(shape);
     }
     displayBoard.style.gridTemplateRows = `repeat(3, 1fr)`;
     displayBoard.style.gridTemplateColumns = `repeat(3, 1fr)`;
@@ -77,8 +80,9 @@ function gameFlow(marker) {
     if (box.innerHTML !== '') {
         return;
     }else {
-        box.innerHTML = "X";
+        box.innerText = "X";
         box.style.color = '#b7e4c7';
+        box.classList.add('fadeIn');
         playerMoves.push(marker);
         console.log(playerMoves);
         for (var i = 0; i < boardArray.length; i++) {
@@ -123,14 +127,11 @@ function normalAI() {
         }
         aiMoves.push(randMove);
         let move = document.querySelector(`[data-box='${randMove}']`);
-        move.innerHTML = 'O';
-        move.style.color = '#6d597a';
-    }else {
-        if (outcome.style.visibility === 'visible') {
-            return;
-        }else {
-            checkWin();
-        }
+        setTimeout(function(){
+            move.innerHTML = 'O'
+            move.style.color = '#6d597a';
+            move.classList.add('fadeIn');
+        }, 1000);
     }
 }
 
@@ -160,9 +161,10 @@ function resetGame() {
     aiMoves = [];
     outcome.visibility = 'hidden',
     outcome.classList.remove('fadeIn');
-    let boxes = document.querySelectorAll('.boardBox');
+    let boxes = document.querySelectorAll('.shape');
     for (var k = 0; k < boxes.length; k++) {
         boxes[k].innerHTML = '';
+        boxes[k].classList.remove('fadeIn');
     }
 }
 
