@@ -143,30 +143,30 @@ p {
 }
 
 .boardBox:nth-child(5) {
-    border-left: 3px solid #2d6a4f;
-    border-top: 3px solid #2d6a4f;
-    border-right: 3px solid #2d6a4f;
-    border-bottom: 3px solid #2d6a4f;
+    border-left: 3px solid #1b4332;
+    border-top: 3px solid #1b4332;
+    border-right: 3px solid #1b4332;
+    border-bottom: 3px solid #1b4332;
 }
 
 .boardBox:nth-child(2) {
-    border-left: 3px solid #2d6a4f;
-    border-right: 3px solid #2d6a4f;
+    border-left: 3px solid #1b4332;
+    border-right: 3px solid #1b4332;
 }
 
 .boardBox:nth-child(4) {
-    border-top: 3px solid #2d6a4f;
-    border-bottom: 3px solid #2d6a4f;
+    border-top: 3px solid #1b4332;
+    border-bottom: 3px solid #1b4332;
 }
 
 .boardBox:nth-child(6) {
-    border-top: 3px solid #2d6a4f;
-    border-bottom: 3px solid #2d6a4f;
+    border-top: 3px solid #1b4332;
+    border-bottom: 3px solid #1b4332;
 }
 
 .boardBox:nth-child(8) {
-    border-left: 3px solid #2d6a4f;
-    border-right: 3px solid #2d6a4f;
+    border-left: 3px solid #1b4332;
+    border-right: 3px solid #1b4332;
 }
 
 #reset {
