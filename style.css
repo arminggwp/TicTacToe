@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 body, html {
     height: 100%;
@@ -15,12 +16,13 @@ body, html {
     text-align: center;
     grid-template-columns: 10% 1fr 2fr 1fr 10%;
     grid-template-rows: 10% 1fr 10% 10% 10% 10%;
+    background-color: black;
 }
 
 #title {
     z-index: 100;
-    font-family: 'Monoton', cursive;
-    color: antiquewhite;
+    font-family: 'Rubik', sans-serif;
+    color: #52b788;
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 3;
@@ -28,13 +30,12 @@ body, html {
     justify-self: center;
     align-self: start;
     font-size: 60px;
-    text-shadow: 5px 10px 10px burlywood;
 }
 
 #title2 {
     z-index: 100;
-    font-family: 'Monoton', cursive;
-    color: white;
+    font-family: 'Rubik', sans-serif;
+    color: #52b788;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 3;
@@ -42,8 +43,11 @@ body, html {
     justify-self: center;
     align-self: start;
     font-size: 30px;
-    text-shadow: 5px 5px 5px burlywood;
-    visibility: hidden;
+    opacity: 0;
+}
+
+#startButton, #reset, #changeAI {
+    height: 45px;
 }
 
 #startButton, #reset, #changeAI {
@@ -56,18 +60,16 @@ body, html {
     align-self: end;
     margin-bottom: 100px;
     background-color: transparent;
-    color: white;
-    text-shadow: 2px 2px 2px burlywood;
+    color: #cad2c5;
     font-size: 30px;
     border: 0px;
     font-family: 'Rubik', sans-serif;
 }
 
 #startButton:hover, .diffButtons:hover, #reset:hover, #changeAI:hover {
-    border: 2px solid white;
-    box-shadow: 0px 0px 20px burlywood;
+    border: 2px solid #2d6a4f;
+    box-shadow: 0px 0px 20px #2d6a4f;
     border-radius: 10px;
-    transform: scale(1.1);
 }
 
 #menu {
@@ -80,18 +82,18 @@ body, html {
     align-self: end;
     display: flex;
     flex-direction: column;
-    visibility: hidden;
+    opacity: 0;
 }
 
 #playerName {
     background-color: transparent;
     justify-self: center;
-    color: burlywood;
+    color: #cad2c5;
     font-family: 'Rubik', sans-serif;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
-    border: 1px solid gray;
+    border: 1px solid #cad2c5;
     border-radius: 10px;
     width: 205px;
     height: 30px;
@@ -99,8 +101,7 @@ body, html {
 
 .diffButtons {
     background-color: transparent;
-    color: white;
-    text-shadow: 2px 2px 2px burlywood;
+    color: #cad2c5;
     font-size: 30px;
     border: 0px;
     font-family: 'Rubik', sans-serif;
@@ -129,37 +130,64 @@ p {
     grid-column-end: 4;
     justify-self: center;
     display: grid;
-    border: 2px solid gray;
-    background-color: rgba(0, 0, 0, 0.2);
     visibility: hidden;
 }
 
 .boardBox {
-    border: 2px solid gray;
     font-size: 80px;
     color: white;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     display: flex; 
     align-items: center;
     justify-content: center;
+}
+
+.boardBox:nth-child(5) {
+    border-left: 3px solid #2d6a4f;
+    border-top: 3px solid #2d6a4f;
+    border-right: 3px solid #2d6a4f;
+    border-bottom: 3px solid #2d6a4f;
+}
+
+.boardBox:nth-child(2) {
+    border-left: 3px solid #2d6a4f;
+    border-right: 3px solid #2d6a4f;
+}
+
+.boardBox:nth-child(4) {
+    border-top: 3px solid #2d6a4f;
+    border-bottom: 3px solid #2d6a4f;
+}
+
+.boardBox:nth-child(6) {
+    border-top: 3px solid #2d6a4f;
+    border-bottom: 3px solid #2d6a4f;
+}
+
+.boardBox:nth-child(8) {
+    border-left: 3px solid #2d6a4f;
+    border-right: 3px solid #2d6a4f;
 }
 
 #reset {
     z-index: 99;
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
     visibility: hidden;
+    align-self: end;
+    margin-bottom: 40%;
+    height: 45px;
 }
 
 #scoreBoard {
-    margin-top: 100px;
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
     justify-self: center;
+    align-self: center;
     visibility: hidden;
     height: 100px;
     width: 300px;
@@ -169,37 +197,38 @@ p {
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     text-align: center;
-    border: 1px solid gray;
+    border: 1px solid transparent;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px #cad2c5;
 }
 
 #scoreName {
-    color: burlywood;
+    color: #cad2c5;
     align-self: center;
     font-size: 26px;
     font-weight: bold;
 }
 
 #wins {
-    color: green;
+    color: #2d6a4f;
     align-self: center;
     font-size: 30px;
     font-weight: bold;
 }
 
 #losses {
-    color: palevioletred;
+    color: #b56576;
     align-self: center;
     font-size: 30px;
     font-weight: bold;
 }
 
 #outcomeScreen {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    color: white;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    color: #cad2c5;
     font-size: 20px;
     font-family: 'Rubik', sans-serif;
     font-weight: bold;
@@ -213,21 +242,23 @@ p {
     grid-row-end: 3;
     grid-column-start: 4;
     grid-column-end: 5;
-    place-self: end center;
+    align-self: start;
+    margin-top: 40%;
     visibility: hidden;
+    height: 45px;
 }
 
 #aboutMe {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 3;
+    grid-column-end: 4;
     visibility: visible;
     color: gray;
     height: 40px;
     width: 200px;
     font-size: 16px;
-    place-self: start center;
+    place-self: end center;
     text-align: center;
     margin-top: 70px;
     visibility: hidden;
@@ -235,4 +266,44 @@ p {
 
 a {
     color: white;
+}
+
+.fadeIn {
+    opacity: 1;
+    visibility: visible;
+	animation-name: fadeInOpacity;
+    animation-timing-function: ease-in;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+        opacity: 0;
+        visibility: hidden;
+	}
+	100% {
+        opacity: 1;
+        visibility: visible;
+	}
+}
+
+.fadeOut {
+    opacity: 1;
+    visibility: visible;
+	animation-name: fadeOutOpacity;
+    animation-timing-function: ease-in;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutOpacity {
+	0% {
+        opacity: 1;
+        visibility: visible;
+	}
+	100% {
+        opacity: 0;
+        visibility: hidden;
+	}
 }

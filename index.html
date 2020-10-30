@@ -11,16 +11,14 @@
     <div id="pageGrid">
       <h1 id="title">Tic Tac Toe</h1>
       <h2 id="title2">Tic Tac Toe</h2>
-      <video autoplay muted loop id="bgVideo">
-        <source src="neon.mp4">
-      </video>
       <button id="startButton" onclick="startButton()">START</button>
       <div id="menu">
         <p id="nameTag">ENTER NAME</p>
         <input id="playerName" type="text">
         <p>SELECT DIFFICULTY</p>
+        <button class="diffButtons" id="vsFriend" onclick="vsFriendButton()">VS FRIEND</button>
         <button class="diffButtons" id="normalDiff" onclick="normalButton()">NORMAL</button>
-        <button class="diffButtons" id="impossibleDiff">IMPOSSIBLE</button>
+        <button class="diffButtons" id="impossibleDiff" onclick="impossibleButton()">IMPOSSIBLE</button>
       </div>
       <div id="displayBoard"></div>
       <div id="scoreBoard"></div>

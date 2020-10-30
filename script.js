@@ -1,11 +1,12 @@
 let boardArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let outcome = document.getElementById('outcomeScreen');
-let normalAiMoves = [];
+let aiMoves = [];
 let playerMoves = [];
 let wins;
 let losses;
 let win = 0;
 let loss = 0;
+let gameMode;
 
 function scoreBoard() {
     let score = document.getElementById('scoreBoard');
@@ -22,11 +23,28 @@ function scoreBoard() {
 }
 
 function startButton() {
-    document.getElementById('menu').style.visibility = 'visible';
-    document.getElementById('startButton').style.visibility = 'hidden';
+    document.getElementById('startButton').classList.add('fadeOut');
+    document.getElementById('menu').classList.add('fadeIn');
 }
 
 function normalButton() {
+    gameMode = 'normal';
+    document.getElementById('title').classList.add('fadeOut');
+    document.getElementById('title2').classList.add('fadeIn');
+    document.getElementById('menu').classList.remove('fadeIn');
+    document.getElementById('menu').classList.add('fadeOut');
+    gameGrid();
+    scoreBoard();
+    document.getElementById('displayBoard').classList.add('fadeIn');
+    document.getElementById('reset').classList.add('fadeIn');
+    let score = document.getElementById('scoreBoard');
+    score.classList.add('fadeIn');
+    document.getElementById('changeAI').classList.add('fadeIn');
+    document.getElementById('aboutMe').classList.add('fadeIn');
+}
+
+function impossibleButton() {
+    gameMode = 'impossible';
     document.getElementById('title').style.visibility = 'hidden';
     document.getElementById('title2').style.visibility = 'visible';
     document.getElementById('menu').style.visibility = 'hidden';
@@ -60,6 +78,7 @@ function gameFlow(marker) {
         return;
     }else {
         box.innerHTML = "X";
+        box.style.color = '#b7e4c7';
         playerMoves.push(marker);
         console.log(playerMoves);
         for (var i = 0; i < boardArray.length; i++) {
@@ -68,24 +87,28 @@ function gameFlow(marker) {
             }
         }
     }
-    normalAI();
+    if (gameMode === 'normal') {
+        normalAI();
+    }else if (gameMode === 'impossible') {
+        impossibleAI();
+    }
     checkWin();
 }
 
 function checkWin() {
     if (winCondition(playerMoves) == true) {
         outcome.innerHTML = "CONGRATULATIONS YOU'VE WON!"
-        outcome.style.visibility = "visible";
+        outcome.classList.add('fadeIn');
         win += 1;
         wins.innerHTML = win + 'W';
-    }else if (winCondition(normalAiMoves) == true) {
+    }else if (winCondition(aiMoves) == true) {
         outcome.innerHTML = "YOU LOST!"
-        outcome.style.visibility = "visible";
+        outcome.classList.add('fadeIn');
         loss += 1;
         losses.innerHTML = loss + 'L';
     }else if (boardArray.length == 0) {
         outcome.innerHTML = "IT'S A DRAW!"
-        outcome.style.visibility = "visible";
+        outcome.classList.add('fadeIn');
     }
 }
 
@@ -98,9 +121,10 @@ function normalAI() {
                 boardArray.splice(i, 1);
             }
         }
-        normalAiMoves.push(randMove);
+        aiMoves.push(randMove);
         let move = document.querySelector(`[data-box='${randMove}']`);
-        move.innerHTML = '0';
+        move.innerHTML = 'O';
+        move.style.color = '#6d597a';
     }else {
         if (outcome.style.visibility === 'visible') {
             return;
@@ -131,12 +155,38 @@ function winCondition(arr) {
 }
 
 function resetGame() {
-    boardArray = boardArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    boardArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
     playerMoves = [];
-    normalAiMoves = [];
-    outcome.innerHTML = '';
+    aiMoves = [];
+    outcome.visibility = 'hidden',
+    outcome.classList.remove('fadeIn');
     let boxes = document.querySelectorAll('.boardBox');
-    for (k = 0; k < boxes.length; k++) {
+    for (var k = 0; k < boxes.length; k++) {
         boxes[k].innerHTML = '';
     }
 }
+
+//evaluate all current possible board endings
+function evalBoard() {
+    let boardValue;
+    let moveDepth;
+    
+}
+
+function impossibleAI() {
+    gameMode = 'impossible';
+}
+
+/* struggles if you dont play a perfect move, can't handle dumb moves */
+
+
+
+/*
+
+    1   2   3
+
+    4   5   6
+
+    7   8   9
+
+*/
