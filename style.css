@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+@font-face {
+    font-family: quicksand;
+    src: url(quicksand.ttf);
+}
 
 body, html {
     height: 100%;
@@ -138,7 +142,7 @@ p {
 .gridBox {
     font-size: 80px;
     color: white;
-    font-family: 'Quicksand', sans-serif;
+    font-family: quicksand;
     display: flex; 
     align-items: center;
     justify-content: center;
