@@ -73,7 +73,7 @@ body, html {
 }
 
 #menu {
-    height: 300px;
+    height: 360px;
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 3;
@@ -83,9 +83,10 @@ body, html {
     display: flex;
     flex-direction: column;
     opacity: 0;
+    visibility: hidden;
 }
 
-#playerName {
+#player1, #player2 {
     background-color: transparent;
     justify-self: center;
     color: #cad2c5;
@@ -97,6 +98,7 @@ body, html {
     border-radius: 10px;
     width: 205px;
     height: 30px;
+    margin: 5px;
 }
 
 .diffButtons {
@@ -133,7 +135,7 @@ p {
     visibility: hidden;
 }
 
-.boardBox {
+.gridBox {
     font-size: 80px;
     color: white;
     font-family: 'Quicksand', sans-serif;
@@ -142,36 +144,36 @@ p {
     justify-content: center;
 }
 
-.shape {
+.shapeContainer {
     height: 100px;
     width: 100px;
     align-items: center;
     justify-content: center;
 }
 
-.boardBox:nth-child(5) {
+.gridBox:nth-child(5) {
     border-left: 3px solid #1b4332;
     border-top: 3px solid #1b4332;
     border-right: 3px solid #1b4332;
     border-bottom: 3px solid #1b4332;
 }
 
-.boardBox:nth-child(2) {
+.gridBox:nth-child(2) {
     border-left: 3px solid #1b4332;
     border-right: 3px solid #1b4332;
 }
 
-.boardBox:nth-child(4) {
+.gridBox:nth-child(4) {
     border-top: 3px solid #1b4332;
     border-bottom: 3px solid #1b4332;
 }
 
-.boardBox:nth-child(6) {
+.gridBox:nth-child(6) {
     border-top: 3px solid #1b4332;
     border-bottom: 3px solid #1b4332;
 }
 
-.boardBox:nth-child(8) {
+.gridBox:nth-child(8) {
     border-left: 3px solid #1b4332;
     border-right: 3px solid #1b4332;
 }
@@ -199,8 +201,8 @@ p {
     height: 100px;
     width: 300px;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     text-align: center;
@@ -209,25 +211,46 @@ p {
     box-shadow: 0px 0px 5px #cad2c5;
 }
 
-#scoreName {
-    color: #cad2c5;
-    align-self: center;
-    font-size: 26px;
-    font-weight: bold;
+#name1 {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 1;
 }
 
-#wins {
+#name2 {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.names {
+    color: #cad2c5;
+    place-self: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.wins {
     color: #2d6a4f;
     align-self: center;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
+    place-self: center;
 }
 
-#losses {
-    color: #b56576;
-    align-self: center;
-    font-size: 30px;
-    font-weight: bold;
+#wins1 {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+#wins2 {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
 }
 
 #outcomeScreen {
@@ -242,17 +265,6 @@ p {
     place-self: center center;
     visibility: hidden;
     margin-top: 20px;
-}
-
-#changeAI {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    align-self: start;
-    margin-top: 40%;
-    visibility: hidden;
-    height: 45px;
 }
 
 #aboutMe {
@@ -273,6 +285,15 @@ p {
 
 a {
     color: white;
+}
+
+#chooseTurn {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: center;
+    visibility: hidden;
 }
 
 .fadeIn {
@@ -312,5 +333,20 @@ a {
 	100% {
         opacity: 0;
         visibility: hidden;
+	}
+}
+
+.fadeRed {
+	animation-name: fadeRed;
+    animation-timing-function: ease-in;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeRed {
+    0% {}
+    
+	100% {
+        background-color: palevioletred;
 	}
 }

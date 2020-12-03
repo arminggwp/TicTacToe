@@ -14,21 +14,24 @@
       <button id="startButton" onclick="startButton()">START</button>
       <div id="menu">
         <p id="nameTag">ENTER NAME</p>
-        <input id="playerName" type="text">
+        <input id="player1" type="text" placeholder="player 1 name">
+        <input id="player2" type="text" placeholder="player 2 name">
         <p>SELECT DIFFICULTY</p>
-        <button class="diffButtons" id="vsFriend" onclick="vsFriendButton()">VS FRIEND</button>
-        <button class="diffButtons" id="normalDiff" onclick="normalButton()">NORMAL</button>
-        <button class="diffButtons" id="impossibleDiff" onclick="impossibleButton()">IMPOSSIBLE</button>
+        <button class="diffButtons" id="vsFriend" onclick="diffButton('friend')">VS FRIEND</button>
+        <button class="diffButtons" id="normalDiff" onclick="diffButton('normal')">NORMAL</button>      </div>
+      <div id="chooseTurn">
+        <p id="selectShape">SELECT</p>
+        <button class="diffButtons" id="turn0" onclick="turnSelect('X', 'O')">X</button>
+        <button class="diffButtons" id="turn1" onclick="turnSelect('O', 'X')">O</button>
       </div>
       <div id="displayBoard"></div>
       <div id="scoreBoard"></div>
       <button id="reset" onclick="resetGame()">RESET</button>
-      <button id="changeAI" onclick="changeAI()">DIFFICULTY</button>
-      <div id="outcomeScreen">CONGRATS</div>
+      <div id="outcomeScreen"></div>
       <div id="aboutMe">
         Made by <a href="https://github.com/arminggwp">arminggwp</a>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="betterScript.js"></script>
   </body>
 </html>
