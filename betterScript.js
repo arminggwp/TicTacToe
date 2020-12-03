@@ -124,7 +124,6 @@ function gameFlow(click) {
             player1.makeMove(click);
             player1Moves.push(click);
             checkEnd();
-            currentTurn = 'player2';
             if (difficulty != 'friend') {
                 gameFlow();
             }
@@ -226,6 +225,7 @@ const definePlayer = function(name, xo, shapeColor) {
                     boardArray.splice(i, 1);
                 }
             }
+            currentTurn = 'player2';
         }
     }
     return {getName, makeMove}
