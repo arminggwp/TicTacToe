@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'VT323', monospace;
+  background: repeating-linear-gradient(to bottom,#000000,#000000 4px,#140c01 7px); 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  height: 80px;
+  text-align: center;
+}
+
+header {
+  margin-top: 20px;
+  font-size: 68px;
+  color: #40916C;
+  text-shadow: 3px 3px 3px #2D6A4F;
+}
+
+footer {
+  font-size: 16px;
+  line-height: 65px;
+  color: white;
+}
+
+a {
+  color: #40916C;
+  font-size: 20px;
+}
+
+a:link {
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.overlay {
+  width: 200%;
+  height: 80px;
+  z-index: 8;
+  background: linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(255, 255, 255, 0.2) 10%,rgba(0, 0, 0, 0) 100%);
+  opacity: .1;
+  position: fixed;
+  bottom: 0;
+  animation: scan 4s linear infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  pointer-events: none;
+} 
+
+main {
+  height: 100%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.marker, .difficulty {
+  margin-bottom: 30px;
+}
+
+button { 
+  font-size: 40px;
+  font-family: inherit;
+  color: #40916C;
+  background-color: transparent;
+  border: none;
+}
+
+button:hover {
+  text-shadow: 0px 0px 20px #2D6A4F;
+}
+
+.reset {
+  display: none;
+}
+
+.start:hover, .reset:hover {
+  text-decoration: underline;
+}
+
+.board {
+  order: 2;
+  height: 350px;
+  width: 350px;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  border-radius: 20px;
+  display: none;
+}
+
+.tile {
+  height: 90%;
+  width: 90%;
+  background-color: transparent;
+  border: 1px solid #2D6A4F;
+  text-align: center;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  font-size: 80px;
+  color: #264653;
+  animation-name: boxFlicker;
+}
+
+.active {
+  text-decoration: underline;
+  text-shadow: 0px 0px 20px #2D6A4F;
+}
+
+.player1, .player2{
+  color:#40916C;
+}
+
+.menuHeader {
+  font-size: 20px;
+  text-align: center;
+}
+
+.opponent, .markers, .startReset {
+  text-align: center;
+}
+
+.announcer {
+  height: 40px;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+* {
+  animation-duration: 0.02s;
+  animation-name: textFlicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  letter-spacing: 1.25px;
+  color: lightgray;
+}
+
+@keyframes textFlicker {
+  from {
+    text-shadow: 1px 0 0 violet, -2px 0 0 lightgreen;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px violet, -1px -0.5px 2px lightgreen;
+  }
+}
+
+@keyframes boxFlicker {
+  from {
+    box-shadow: 1px 0 0 violet, -2px 0 0 lightgreen;
+  }
+  to {
+    box-shadow: 1.5px 0.5px 1.5px violet, -1px -0.5px 1.5px lightgreen;
+  }
+}
+
+@keyframes scan {
+  0%{bottom:100%}
+  50%{bottom:100%}
+  100%{bottom:0px}
+}
