@@ -63,7 +63,7 @@ main {
   cursor: default;
 }
 
-.marker, .difficulty {
+.marker {
   margin-bottom: 30px;
 }
 
@@ -129,7 +129,7 @@ button:hover {
   text-align: center;
 }
 
-.opponent, .markers, .startReset {
+.markers, .startReset {
   text-align: center;
 }
 

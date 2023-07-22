@@ -73,13 +73,7 @@ const displayMenu = (() => {
   // toggle active / selected buttons
   allButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      if (button.textContent === '2P') {
-        button.classList.add('active');
-        opponent.children[1].classList.remove('active');
-      } else if (button.textContent === 'AI') {
-        button.classList.add('active');
-        opponent.children[0].classList.remove('active');
-      } else if (button.textContent === 'X') {
+      if (button.textContent === 'X') {
         button.className = 'markerX active player1';
         markers.children[1].className = 'marker0 player2';
       } else if (button.textContent === 'O') {
