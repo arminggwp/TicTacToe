@@ -1,12 +1,19 @@
-# Tic Tac Toe
+# TOP: Tic Tac Toe
 
-Simple game from the Odin Project curriculum. 
-Made with HTML, CSS and JS. 
+![Screenshot_20230722_181022](https://github.com/arminggwp/tictactoe/assets/59449014/ff6fe04d-448d-40bb-91dd-b170dfff5334)
 
-I've tried to make the looks resemble old monochrome CRT displays, 
-with flickering and scan lines.
+### About the project
+Simple game from [TheOdinProject](https://www.theodinproject.com/) curriculum. 
+I've tried to make the design resemble old monochrome CRT displays, 
+with flickering effects and scan lines. I'm rather happy how it turned out,
+especially the retro effects.
 
-To be done: 
-optional part of the project, adding a minimax algorithm to play against. 
-polish up UI
+Link to the assignment can be found [HERE](https://www.theodinproject.com/lessons/node-path-javascript-tic-tac-toe) 
+
+### Built with: 
+- HTML
+- CSS
+- JavaScript
+
+
 
